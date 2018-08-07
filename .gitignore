@@ -1,0 +1,112 @@
+# Maven generated files
+target/
+MANIFEST.MF
+overlays/
+
+
+# Ignore all hidden files & folders except gitignore & kitchen
+.*
+!/.gitignore
+
+# Compiled files
+*.class
+
+# Packages
+*.jar
+
+# Eclipse files
+*.classpath
+*.project
+*.settings
+
+# IntelliJ IDEA files
+/.metadata
+/Servers*
+
+# OS files
+**/.pmd
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages           #
+######################
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.war
+*.ejb
+*.ear
+*.rar
+*.tar
+*.tar.gz
+*.zip
+
+# MS Office          #
+######################
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.ppt
+*.pptx
+*.vsd
+*.vdx
+
+# Generated          #
+######################
+bin/
+target/
+MANIFEST.MF
+
+# IntelliJ files      #
+#######################
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Netbeans            #
+#######################
+nbactions.xml
+nb-configuration.xml
+
+# Logs and databases #
+######################
+*.log
+*.sqlite
+
+# OS generated files #
+######################
+ehthumbs.db
+Thumbs.db
+
+# Deprecated image files #
+##########################
+*.bmp
+*.psd
+*.psb
+
+
+# Deprecated image files #
+##########################
+*.bmp
+*.psd
+*.psb
+
+# Node exclusions #
+##########################
+ici/node
+*grunt/node_modules/*
+*node_modules*
+*-SNAPSHOT*
+*.orig
