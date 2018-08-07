@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Item {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private long id;
 	private String name;
 	private String caption;
 	private String description;
@@ -25,9 +25,9 @@ public class Item {
 	
 	private String imageurls;
 	@Column(name = "normal_price")
-	private Integer normalPrice;
+	private Double normalPrice;
 	@Column(name = "discounted_price")
-	private Integer discountedPrice;
+	private Double discountedPrice;
 	@Column(name = "currency_code")
 	private String currencyCode;
 	@Column(name = "available_days")
@@ -38,18 +38,18 @@ public class Item {
 	@Column(name = "category_type")
 	private String categoryType;
 	@Column(name = "quantity_value")
-	private Integer quantityValue;
+	private Short quantityValue;
 	@Column(name = "quantity_unit")
 	private String quantityUnit;
-	private Integer rating;
+	private Float rating;
 	@Column(name = "prepared_at")
 	private String preparedAt;
 	@Column(name = "coverage_distance")
 	private String coverageDistance;
 	@Column(name = "normal_price_for_customcombo")
-	private Integer normalPriceForCustomcombo;
+	private Double normalPriceForCustomcombo;
 	@Column(name = "discounted_price_for_customcombo")
-	private Integer discountedPriceForCustomcombo;
+	private Double discountedPriceForCustomcombo;
 	@Column(name = "allowed_for_customcombo")
 	private boolean allowedForCustomcombo;
 	@Column(name = "allowed_for_individual_sale")
@@ -57,11 +57,11 @@ public class Item {
 	@Column(name = "sold_out")
 	private boolean soldOut;
 
-	public Integer getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -121,19 +121,19 @@ public class Item {
 		this.imageurls = imageurls;
 	}
 
-	public Integer getNormalPrice() {
+	public Double getNormalPrice() {
 		return normalPrice;
 	}
 
-	public void setNormalPrice(Integer normalPrice) {
+	public void setNormalPrice(Double normalPrice) {
 		this.normalPrice = normalPrice;
 	}
 
-	public Integer getDiscountedPrice() {
+	public Double getDiscountedPrice() {
 		return discountedPrice;
 	}
 
-	public void setDiscountedPrice(Integer discountedPrice) {
+	public void setDiscountedPrice(Double discountedPrice) {
 		this.discountedPrice = discountedPrice;
 	}
 
@@ -177,11 +177,11 @@ public class Item {
 		this.categoryType = categoryType;
 	}
 
-	public Integer getQuantityValue() {
+	public Short getQuantityValue() {
 		return quantityValue;
 	}
 
-	public void setQuantityValue(Integer quantityValue) {
+	public void setQuantityValue(Short quantityValue) {
 		this.quantityValue = quantityValue;
 	}
 
@@ -193,11 +193,11 @@ public class Item {
 		this.quantityUnit = quantityUnit;
 	}
 
-	public Integer getRating() {
+	public Float getRating() {
 		return rating;
 	}
 
-	public void setRating(Integer rating) {
+	public void setRating(Float rating) {
 		this.rating = rating;
 	}
 
@@ -225,19 +225,19 @@ public class Item {
 		return "EUR".equalsIgnoreCase(this.currencyCode);
 	}
 
-	public Integer getNormalPriceForCustomcombo() {
+	public Double getNormalPriceForCustomcombo() {
 		return normalPriceForCustomcombo;
 	}
 
-	public void setNormalPriceForCustomcombo(Integer normalPriceForCustomcombo) {
+	public void setNormalPriceForCustomcombo(Double normalPriceForCustomcombo) {
 		this.normalPriceForCustomcombo = normalPriceForCustomcombo;
 	}
 
-	public Integer getDiscountedPriceForCustomcombo() {
+	public Double getDiscountedPriceForCustomcombo() {
 		return discountedPriceForCustomcombo;
 	}
 
-	public void setDiscountedPriceForCustomcombo(Integer discountedPriceForCustomcombo) {
+	public void setDiscountedPriceForCustomcombo(Double discountedPriceForCustomcombo) {
 		this.discountedPriceForCustomcombo = discountedPriceForCustomcombo;
 	}
 

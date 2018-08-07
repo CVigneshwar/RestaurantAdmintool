@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Combo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private long id;
 
 	private String name = "";
 
@@ -24,10 +24,10 @@ public class Combo {
 	private String imageurls;
 
 	@Column(name = "normal_price")
-	private Integer normalPrice = 0;
+	private double normalPrice = 0;
 
 	@Column(name = "discounted_price")
-	private Integer discountedPrice = 0;
+	private double discountedPrice = 0;
 
 	@Column(name = "currency_code")
 	private String currencyCode = "EUR";
@@ -39,18 +39,18 @@ public class Combo {
 	private String availableTime;
 
 	@Column(name = "quantity_value")
-	private Integer quantityValue = 0;
+	private short quantityValue = 0;
 
 	@Column(name = "quantity_unit")
 	private String quantityUnit = "";
 
-	private String rating;
+	private float rating;
 
-	public Integer getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -86,19 +86,19 @@ public class Combo {
 		this.imageurls = imageurls;
 	}
 
-	public Integer getNormalPrice() {
+	public double getNormalPrice() {
 		return normalPrice;
 	}
 
-	public void setNormalPrice(Integer normalPrice) {
+	public void setNormalPrice(double normalPrice) {
 		this.normalPrice = normalPrice;
 	}
 
-	public Integer getDiscountedPrice() {
+	public double getDiscountedPrice() {
 		return discountedPrice;
 	}
 
-	public void setDiscountedPrice(Integer discountedPrice) {
+	public void setDiscountedPrice(double discountedPrice) {
 		this.discountedPrice = discountedPrice;
 	}
 
@@ -126,11 +126,11 @@ public class Combo {
 		this.availableTime = availableTime.trim();
 	}
 
-	public Integer getQuantityValue() {
+	public short getQuantityValue() {
 		return quantityValue;
 	}
 
-	public void setQuantityValue(Integer quantityValue) {
+	public void setQuantityValue(short quantityValue) {
 		this.quantityValue = quantityValue;
 	}
 
@@ -142,11 +142,11 @@ public class Combo {
 		this.quantityUnit = quantityUnit.trim();
 	}
 
-	public String getRating() {
+	public float getRating() {
 		return rating;
 	}
 
-	public void setRating(String rating) {
+	public void setRating(float rating) {
 		this.rating = rating;
 	}
 }

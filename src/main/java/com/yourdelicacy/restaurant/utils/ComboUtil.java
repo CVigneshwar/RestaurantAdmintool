@@ -18,7 +18,7 @@ public final class ComboUtil {
 			comboFormBean.setAvailableDays(addText(comboFormBean.getAvailableDays(), item.getAvailableDays()));
 			comboFormBean.setAvailableTime(addText(comboFormBean.getAvailableTime(), item.getAvailableTime()));
 			comboFormBean.setQuantityUnit(addText(comboFormBean.getQuantityUnit(), item.getQuantityUnit()));
-			comboFormBean.setQuantityValue(comboFormBean.getQuantityValue() + item.getQuantityValue());
+			comboFormBean.setQuantityValue((short)(comboFormBean.getQuantityValue() + item.getQuantityValue()));
 			comboFormBean.setDeliveryOptionType(comboFormBean.getDeliveryOptionType());
 			comboFormBean.setDiscountedPrice(addNum(comboFormBean.getDiscountedPrice(), item.getDiscountedPrice()));
 			comboFormBean.setNormalPrice(comboFormBean.getNormalPrice() + item.getNormalPrice());
@@ -30,11 +30,11 @@ public final class ComboUtil {
 		return (StringUtils.isEmpty(text1) ? text2 : text1 + " | " + text2).replaceAll("\\|$", "");
 	}
 
-	private static Integer addNum(Integer num1, Integer num2) {
-		if (num1 == null) {
-			return num2 == null ? 0 : num2;
+	private static double addNum(double num1, double num2) {
+		if (num1 == 0.0) {
+			return num2 == 0.0 ? 0 : num2;
 		} else {
-			return num1 + (num2 == null ? 0 : num2);
+			return num1 + (num2 == 0.0 ? 0 : num2);
 		}
 	}
 }

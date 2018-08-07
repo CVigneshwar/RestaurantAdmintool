@@ -12,13 +12,13 @@ public interface ItemService {
 
 	public Item create(Item Item);
 
-	public void delete(int id);
+	public void delete(long id);
 
 	public List<Item> findAll();
 
 	public Item update(Item Item);
 
-	public Item findById(int id);
+	public Item findById(long id);
 
 	public List<Item> getSelectedItemAsList(String itemIds);
 

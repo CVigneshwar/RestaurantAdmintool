@@ -12,9 +12,9 @@ public class ComboFormBean {
 
 	private String imageurls;
 
-	private Integer normalPrice = 0;
+	private double normalPrice = 0;
 
-	private Integer discountedPrice = 0;
+	private double discountedPrice = 0;
 
 	private String currencyCode = "EUR";
 
@@ -22,11 +22,11 @@ public class ComboFormBean {
 
 	private String availableTime;
 
-	private Integer quantityValue = 0;
+	private short quantityValue = 0;
 
 	private String quantityUnit = "";
 
-	private String rating;
+	private float rating;
 
 	public Integer getId() {
 		return id;
@@ -68,19 +68,19 @@ public class ComboFormBean {
 		this.imageurls = imageurls;
 	}
 
-	public Integer getNormalPrice() {
+	public double getNormalPrice() {
 		return normalPrice;
 	}
 
-	public void setNormalPrice(Integer normalPrice) {
+	public void setNormalPrice(double normalPrice) {
 		this.normalPrice = normalPrice;
 	}
 
-	public Integer getDiscountedPrice() {
+	public double getDiscountedPrice() {
 		return discountedPrice;
 	}
 
-	public void setDiscountedPrice(Integer discountedPrice) {
+	public void setDiscountedPrice(double discountedPrice) {
 		this.discountedPrice = discountedPrice;
 	}
 
@@ -108,11 +108,11 @@ public class ComboFormBean {
 		this.availableTime = availableTime;
 	}
 
-	public Integer getQuantityValue() {
+	public short getQuantityValue() {
 		return quantityValue;
 	}
 
-	public void setQuantityValue(Integer quantityValue) {
+	public void setQuantityValue(short quantityValue) {
 		this.quantityValue = quantityValue;
 	}
 
@@ -124,11 +124,11 @@ public class ComboFormBean {
 		this.quantityUnit = quantityUnit;
 	}
 
-	public String getRating() {
+	public float getRating() {
 		return rating;
 	}
 
-	public void setRating(String rating) {
+	public void setRating(float rating) {
 		this.rating = rating;
 	}
 }

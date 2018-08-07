@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class ItemFormBean {
-	private Integer id;
+	private long id;
 	private String name;
 	private String caption;
 	private String description;
@@ -14,30 +14,29 @@ public class ItemFormBean {
 	private String dietType;
 	private String itemType;
 	private String imageurls;
-	private Integer normalPrice;
-	private Integer discountedPrice;
+	private double normalPrice;
+	private double discountedPrice;
 	private String currencyCode;
 	private String availableDays;
 	private String availableTime;
 	private String ingredients;
 	private String categoryType;
-	private Integer comboId;
-	private Integer quantityValue;
+	private short quantityValue;
 	private String quantityUnit;
-	private Integer rating;
+	private float rating;
 	private String preparedAt;
 	private String coverageDistance;
-	private Integer normalPriceForCustomcombo;
-	private Integer discountedPriceForCustomcombo;
+	private double normalPriceForCustomcombo;
+	private double discountedPriceForCustomcombo;
 	private boolean allowedForCustomcombo;
 	private boolean allowedForIndividualSale;
 	private boolean soldOut;
 
-	public Integer getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -97,19 +96,19 @@ public class ItemFormBean {
 		this.imageurls = imageurls;
 	}
 
-	public Integer getNormalPrice() {
+	public double getNormalPrice() {
 		return normalPrice;
 	}
 
-	public void setNormalPrice(Integer normalPrice) {
+	public void setNormalPrice(double normalPrice) {
 		this.normalPrice = normalPrice;
 	}
 
-	public Integer getDiscountedPrice() {
+	public double getDiscountedPrice() {
 		return discountedPrice;
 	}
 
-	public void setDiscountedPrice(Integer discountedPrice) {
+	public void setDiscountedPrice(double discountedPrice) {
 		this.discountedPrice = discountedPrice;
 	}
 
@@ -153,19 +152,12 @@ public class ItemFormBean {
 		this.categoryType = categoryType;
 	}
 
-	public Integer getComboId() {
-		return comboId;
-	}
 
-	public void setComboId(Integer comboId) {
-		this.comboId = comboId;
-	}
-
-	public Integer getQuantityValue() {
+	public short getQuantityValue() {
 		return quantityValue;
 	}
 
-	public void setQuantityValue(Integer quantityValue) {
+	public void setQuantityValue(short quantityValue) {
 		this.quantityValue = quantityValue;
 	}
 
@@ -177,11 +169,11 @@ public class ItemFormBean {
 		this.quantityUnit = quantityUnit;
 	}
 
-	public Integer getRating() {
+	public float getRating() {
 		return rating;
 	}
 
-	public void setRating(Integer rating) {
+	public void setRating(float rating) {
 		this.rating = rating;
 	}
 
@@ -205,19 +197,19 @@ public class ItemFormBean {
 		return "VEGETARIAN".equalsIgnoreCase(this.dietType) || "VEG".equalsIgnoreCase(this.dietType);
 	}
 
-	public Integer getNormalPriceForCustomcombo() {
+	public double getNormalPriceForCustomcombo() {
 		return normalPriceForCustomcombo;
 	}
 
-	public void setNormalPriceForCustomcombo(Integer normalPriceForCustomcombo) {
+	public void setNormalPriceForCustomcombo(double normalPriceForCustomcombo) {
 		this.normalPriceForCustomcombo = normalPriceForCustomcombo;
 	}
 
-	public Integer getDiscountedPriceForCustomcombo() {
+	public double getDiscountedPriceForCustomcombo() {
 		return discountedPriceForCustomcombo;
 	}
 
-	public void setDiscountedPriceForCustomcombo(Integer discountedPriceForCustomcombo) {
+	public void setDiscountedPriceForCustomcombo(double discountedPriceForCustomcombo) {
 		this.discountedPriceForCustomcombo = discountedPriceForCustomcombo;
 	}
 

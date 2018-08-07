@@ -99,15 +99,6 @@ public class ItemController {
 		return "itemInventory";
 	}
 
-	private void setNextId(Item itemToBeUpdated, List<Item> itemList) {
-
-		int maxId = 0;
-		for(Item item:itemList) {
-			maxId = Math.max(maxId, item.getId());
-		}
-		itemToBeUpdated.setId(maxId+1);
-	}
-
 	private void prepareItemEntity(Item item, ItemFormBean itemFormBean) {
 		item.setAvailableDays(itemFormBean.getAvailableDays());
 		item.setAvailableTime(itemFormBean.getAvailableTime());

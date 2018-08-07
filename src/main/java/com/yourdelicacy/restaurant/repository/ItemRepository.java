@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface ItemRepository extends JpaRepository<com.yourdelicacy.restaurant.model.Item, Integer> {
+public interface ItemRepository extends JpaRepository<com.yourdelicacy.restaurant.model.Item, Long> {
 
 }

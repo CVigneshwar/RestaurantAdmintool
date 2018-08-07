@@ -131,10 +131,16 @@
 					<span class="focus-input100"></span>
 				</div>
 				
-					<div class="wrap-input100 validate-input" data-validate="Category Type required">
-					<span class="label-input100"> Category Type</span>
-					<input class="input100" type="text" name="categoryType" placeholder="Enter Category Type" {{#categoryType}} value="{{categoryType}}" {{/categoryType}}>
-					<span class="focus-input100"></span>
+				
+				<div class="wrap-input100 input100-select">
+					<span class="label-input100">Category Type</span>
+					<div>
+						<select class="custom-select sources" id="categoryType" name="categoryType" {{#categoryType}} value="{{categoryType}}" {{/categoryType}}>
+							<option value="NORTH_INDIAN">NORTH_INDIAN</option>
+							<option value="SOUTH_INDIAN">SOUTH_INDIAN</option>
+							<option value="CONTINENTAL">CONTINENTAL</option>
+						</select>
+					</div>
 				</div>
 				
 	
@@ -174,7 +180,7 @@
 				
 				<div class="wrap-input100 validate-input" data-validate="discountedPriceForCustomcombo  required">
 					<span class="label-input100">Discounted price for custom combo</span>
-					<input class="input100" type="text" name="discountedPriceForCustomcombo" placeholder="Enter discounted price for custom combo" {{#normalPriceForCustomcombo}} value="{{normalPriceForCustomcombo}}" {{/normalPriceForCustomcombo}} required>
+					<input class="input100" type="text" name="discountedPriceForCustomcombo" placeholder="Enter discounted price for custom combo" {{#discountedPriceForCustomcombo}} value="{{discountedPriceForCustomcombo}}" {{/discountedPriceForCustomcombo}} required>
 					<span class="focus-input100"></span>
 				</div>
 				
@@ -235,7 +241,12 @@
 	var deliveryOptionType = "{{deliveryOptionType}}";
 	var deliveryOptionTypeId = "#deliveryOptionType";
 	{{/deliveryOptionType}}
-	
+
+	{{#categoryType}}
+	var categoryType = "{{categoryType}}";
+	var categoryTypeId = "#categoryType";
+	{{/categoryType}}
+
 	{{#allowedForCustomcombo}}
 	var allowedForCustomcombo = "{{allowedForCustomcombo}}";
 	var allowedForCustomcomboId = "#allowedForCustomcombo";
@@ -293,6 +304,7 @@ document.getElementById('updateItemSubmit').action="addOrUpdateItem?isItemToBeEd
     	$(itemID).val(itemType);
 	$(dietTypeId).val(dietType);
 	$(deliveryOptionTypeId).val(deliveryOptionType);
+	$(categoryTypeId).val(categoryType);
 	$(allowedForCustomcomboId).val(allowedForCustomcombo);
 	$(allowedForIndividualSaleId).val(allowedForIndividualSale);
 	$(soldOutId).val(soldOut);
