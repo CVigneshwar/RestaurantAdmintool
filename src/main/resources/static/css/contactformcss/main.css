@@ -653,3 +653,82 @@ textarea.input100 {
       background: #f9f9f9;
     }
 
+.progress {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  padding: 0;
+  margin: 0;
+}
+.progress__step {
+  display: table-cell;
+  text-align: center;
+  vertical-align: top;
+  position: relative;
+}
+.progress__step::before {
+  content: "";
+  display: block;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.progress__step:not(:first-child)::after {
+  content: "";
+  position: absolute;
+  top: 1.3em;
+  left: -50%;
+  width: 100%;
+  height: .4em;
+  z-index: -1;
+}
+
+.progress--counter .progress__step {
+  counter-increment: step-number;
+  font-weight: bold;
+  line-height: 3em;
+}
+.progress--counter .progress__step::before {
+  content: counter(step-number);
+}
+
+/* demo styles 
+------------------------------------------------- */
+body {
+  font: 13px/1.5 Arial;
+}
+h2 {
+  margin-top: 2em;
+}
+
+.progress {
+    display: -ms-flexbox;
+    font-size: .75rem;
+    border-radius: .25rem;
+}
+
+
+.progress .progress__step::before, .progress__step::after {
+    background-color: #9c5959;
+}
+.progress .progress__step::before {
+    background-color: #EEC170;
+    box-shadow: inset 0 0 0 3px #9c5959;
+}
+
+.progress .progress__step--active::before {
+    background-color: #F8E8CB;
+    box-shadow: 0 0 3px 1px #9c5959;
+}
+/* steps after the active step */
+.progress .progress__step--active ~ .progress__step::before {
+  background-color: #eee;
+  box-shadow: inset 0 0 0 3px #ccc;
+}
+.progress .progress__step--active ~ .progress__step::after {
+  background-color: #ccc
+}
+
+
+

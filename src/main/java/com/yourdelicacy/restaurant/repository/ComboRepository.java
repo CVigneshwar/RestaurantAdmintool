@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import com.yourdelicacy.restaurant.model.Combo;
 
 @Repository
-public interface ComboRepository extends JpaRepository<Combo, Integer> {
+public interface ComboRepository extends JpaRepository<Combo, Long> {
 
 }

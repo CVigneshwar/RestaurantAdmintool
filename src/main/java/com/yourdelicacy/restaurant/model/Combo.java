@@ -11,12 +11,12 @@ import javax.persistence.Table;
 @Table(name = "combo")
 public class Combo {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-	private String name = "";
+	private String name;
 
-	private String description = "";
+	private String description;
 
 	@Column(name = "delivery_option_type")
 	private String deliveryOptionType;
@@ -24,10 +24,10 @@ public class Combo {
 	private String imageurls;
 
 	@Column(name = "normal_price")
-	private double normalPrice = 0;
+	private Double normalPrice;
 
 	@Column(name = "discounted_price")
-	private double discountedPrice = 0;
+	private Double discountedPrice;
 
 	@Column(name = "currency_code")
 	private String currencyCode = "EUR";
@@ -39,18 +39,24 @@ public class Combo {
 	private String availableTime;
 
 	@Column(name = "quantity_value")
-	private short quantityValue = 0;
+	private Short quantityValue;
 
 	@Column(name = "quantity_unit")
-	private String quantityUnit = "";
+	private String quantityUnit;
 
-	private float rating;
+	private Float rating;
+	
+	@Column(name = "category_type")
+	private String categoryType;
+	
+	@Column(name = "item_ids")
+	private String itemIds;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -86,19 +92,19 @@ public class Combo {
 		this.imageurls = imageurls;
 	}
 
-	public double getNormalPrice() {
+	public Double getNormalPrice() {
 		return normalPrice;
 	}
 
-	public void setNormalPrice(double normalPrice) {
+	public void setNormalPrice(Double normalPrice) {
 		this.normalPrice = normalPrice;
 	}
 
-	public double getDiscountedPrice() {
+	public Double getDiscountedPrice() {
 		return discountedPrice;
 	}
 
-	public void setDiscountedPrice(double discountedPrice) {
+	public void setDiscountedPrice(Double discountedPrice) {
 		this.discountedPrice = discountedPrice;
 	}
 
@@ -126,11 +132,11 @@ public class Combo {
 		this.availableTime = availableTime.trim();
 	}
 
-	public short getQuantityValue() {
+	public Short getQuantityValue() {
 		return quantityValue;
 	}
 
-	public void setQuantityValue(short quantityValue) {
+	public void setQuantityValue(Short quantityValue) {
 		this.quantityValue = quantityValue;
 	}
 
@@ -142,11 +148,27 @@ public class Combo {
 		this.quantityUnit = quantityUnit.trim();
 	}
 
-	public float getRating() {
+	public Float getRating() {
 		return rating;
 	}
 
-	public void setRating(float rating) {
+	public void setRating(Float rating) {
 		this.rating = rating;
+	}
+
+	public String getCategoryType() {
+		return categoryType;
+	}
+
+	public void setCategoryType(String categoryType) {
+		this.categoryType = categoryType;
+	}
+
+	public String getItemIds() {
+		return itemIds;
+	}
+
+	public void setItemIds(String itemIds) {
+		this.itemIds = itemIds;
 	}
 }

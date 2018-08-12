@@ -20,7 +20,7 @@
     <nav>
       <ul id="nav">
         <li><a href="/repository/selectItem/showAllItems" class="current">Items</a></li>
-        <li><a href="/repository/combo/showAllItems">Combos</a></li>
+        <li><a href="/repository/combo/getAllCombos">Combos</a></li>
     </ul>
     </nav>
   </header>

@@ -27,14 +27,14 @@ public class ComboServiceImpl implements ComboService {
 
 	@Override
 	@Transactional
-	public Combo findById(int id) {
+	public Combo findById(Long id) {
 		Optional<Combo> combo = comboRepository.findById(id);
 		return combo.orElse(null);
 	}
 
 	@Override
 	@Transactional
-	public void delete(int id) {
+	public void delete(Long id) {
 		comboRepository.deleteById(id);
 	}
 

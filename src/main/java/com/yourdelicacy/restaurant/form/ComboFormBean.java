@@ -1,38 +1,43 @@
 package com.yourdelicacy.restaurant.form;
 
+
 public class ComboFormBean {
 
-	private Integer id;
+	private Long id;
 
-	private String name = "";
+	private String name;
 
-	private String description = "";
+	private String description;
 
 	private String deliveryOptionType;
 
 	private String imageurls;
 
-	private double normalPrice = 0;
+	private Double normalPrice=0.0;
 
-	private double discountedPrice = 0;
+	private Double discountedPrice =0.0;
 
-	private String currencyCode = "EUR";
+	private String currencyCode;
 
 	private String availableDays;
 
 	private String availableTime;
 
-	private short quantityValue = 0;
+	private Short quantityValue;
 
-	private String quantityUnit = "";
+	private String quantityUnit;
 
-	private float rating;
+	private Float rating;
+	
+	private String categoryType;
+	
+	private String itemIds;
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -68,19 +73,19 @@ public class ComboFormBean {
 		this.imageurls = imageurls;
 	}
 
-	public double getNormalPrice() {
+	public Double getNormalPrice() {
 		return normalPrice;
 	}
 
-	public void setNormalPrice(double normalPrice) {
+	public void setNormalPrice(Double normalPrice) {
 		this.normalPrice = normalPrice;
 	}
 
-	public double getDiscountedPrice() {
+	public Double getDiscountedPrice() {
 		return discountedPrice;
 	}
 
-	public void setDiscountedPrice(double discountedPrice) {
+	public void setDiscountedPrice(Double discountedPrice) {
 		this.discountedPrice = discountedPrice;
 	}
 
@@ -108,11 +113,11 @@ public class ComboFormBean {
 		this.availableTime = availableTime;
 	}
 
-	public short getQuantityValue() {
+	public Short getQuantityValue() {
 		return quantityValue;
 	}
 
-	public void setQuantityValue(short quantityValue) {
+	public void setQuantityValue(Short quantityValue) {
 		this.quantityValue = quantityValue;
 	}
 
@@ -124,11 +129,27 @@ public class ComboFormBean {
 		this.quantityUnit = quantityUnit;
 	}
 
-	public float getRating() {
+	public Float getRating() {
 		return rating;
 	}
 
-	public void setRating(float rating) {
+	public void setRating(Float rating) {
 		this.rating = rating;
+	}
+	
+	public String getCategoryType() {
+		return categoryType;
+	}
+
+	public void setCategoryType(String categoryType) {
+		this.categoryType = categoryType;
+	}
+
+	public String getItemIds() {
+		return itemIds;
+	}
+
+	public void setItemIds(String itemIds) {
+		this.itemIds = itemIds;
 	}
 }

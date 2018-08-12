@@ -28,9 +28,8 @@
   <header>
     <nav>
       <ul id="nav">
-        <!-- <li><img src="/repository/css/images/Uboxitlogo.png"></li> -->        
         <li><a href="/repository/selectItem/showAllItems" >Items</a></li>
-        <li><a href="/repository/combo/showAllItems" class="current">Combos</a></li>
+        <li><a href="/repository/combo/getAllCombos" class="current">Combos</a></li>
     </ul>
     </nav>
   </header>
@@ -46,93 +45,34 @@
     color: #9c5959;
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
     font-weight: normal;
-    line-height: 1.3;">Select items to create combo</h6>
+    line-height: 1.3;">Select items to create combo :</h6>
+    
+    
+<ol class="progress progress--counter" id="progress" style="display: table; overflow:auto;background-color:transparent ;   margin: 25px; height: 1rem;    font-size: .75rem;    border-radius: .25rem; " >
+  <li class="progress__step {{#stepSelectStarters}}progress__step--active{{/stepSelectStarters}}">Starters</li>
+  <li class="progress__step {{#stepSelectMainCourse}}progress__step--active{{/stepSelectMainCourse}}">Main Course</li>
+  <li class="progress__step {{#stepSelectDesserts}}progress__step--active{{/stepSelectDesserts}}">Desserts</li>
+</ol>
 {{#items}}
 <div class="itembox">
-<div class=" col-sm-3 nopad text-center">
-    <label class="itembox image-checkbox" style="height: 120px;width: 400px;border: solid;padding: 0px; display: inline-flex; width: auto;">
-      <!-- <img class="img-responsive" src="{{imageurls}}"/> -->
-      <img class="img-responsive" src="https://res.cloudinary.com/your-delicacy-bv/image/upload/Combo1"/>
-      <input type="checkbox" name="itemid" value="{{id}}" />
-      <i class="fa fa-check hidden"></i>
+      
     </label>
     <li>
-    <ul><p style="padding: 0px;margin: 0px;">{{name}} - {{normalPrice}}{{#isEuro}}&euro;{{/isEuro}}{{^isEuro}}{{currencyCode}}{{/isEuro}}</p></ul>
-    <ul><p style="padding: 0px;margin: 0px;">{{#isVegetarian}}<img src="/repository/css/images/icon_vegetarian.png" style="width: auto;" class="vegicon">{{/isVegetarian}} {{itemType}} | {{deliveryOptionType}}</p></ul>
+    <ul> <p style="padding: 0px;margin: 0px;"><input type="checkbox" name="itemid" value="{{id}}" > {{name}} - {{normalPrice}}{{#isEuro}}&euro;{{/isEuro}}{{^isEuro}}{{currencyCode}}{{/isEuro}}</p></input></ul>
     <ul></ul>
     </li>
 </div>
-</div>
 {{/items}}
 </div>
-<a class="button" value="create" onclick="doSubmit()" style="background-color: #d3394c; position: fixed;  bottom: 0px;  left: 35%;">Create combo</a></div><br>  <div class="border3">
+<input type="hidden" id="nextAction" value={{nextAction}}>
+<a class="button" value="create" onclick="doSubmit()" style="background-color: #d3394c; position: fixed;  bottom: 0px;  color: white;left: 45%;">{{^stepSelectDesserts}}Continue{{/stepSelectDesserts}}{{#stepSelectDesserts}}Create combo{{/stepSelectDesserts}}</a></div><br>  <div class="border3">
 </div>
     
 </form>
 </div>
-<div class="alignright" style="
-    width: 25%;
-    float: right;
-    display: grid;
-    margin-top: 5%;
-    border: solid;
-    background-color: #9c5959;
-    border-color: darkgray;
 
-">
-
-<aside class="sidebar">
-
-<h6 style="font-size: 25px;font-family: 'Lobster13Regular', cursive; color: antiquewhite; text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2); font-weight: normal; line-height: 1.3;  margin-left: 15%;  margin-bottom: 13%;">Today's Combos</h6>
-
-<div class="itembox" style=" background-color: bisque;  width: 78%;">
-<div class=" nopad text-center" style="
-    border-color:  ghostwhite;
-    width: 98%;
-">
-    <label class="itembox " style="height: 120px;width: 400px;border: solid;padding: 0px; display: inline-flex; width: auto;">
-      <!-- <img class="img-responsive" src="https://www.uboxit.nl"/> -->
-      <img class="img-responsive" src="https://res.cloudinary.com/your-delicacy-bv/image/upload/Combo1">
-      
-    </label>
-    <li>
-    <ul><p style="padding: 0px;margin: 0px;">Combo1 - 20EUR</p></ul>
-    <ul><p style="padding: 0px;margin: 0px;">  | TAKE_AWAY</p></ul>
-    <ul></ul>
-    </li>
 </div>
 </div>
-
-    </aside>
-
-<aside class="sidebar">
-<h6 style="font-size: 25px;font-family: 'Lobster13Regular', cursive; color: antiquewhite; text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2); font-weight: normal; line-height: 1.3;  margin-left: 15%;  margin-bottom: 13%;">Existing Combos</h6>
-{{#combos}}
-    <div class="itembox" style=" background-color: bisque;  width: 78%;">
-<div class=" nopad text-center" style="
-    border-color:  ghostwhite;
-    width: 98%;
-">
-    <label class="itembox image-checkbox" style="height: 120px;width: 400px;border: solid;padding: 0px; display: inline-flex; width: auto;">
-      <!-- <img class="img-responsive" src="{{imageurls}}"/> -->
-      <img class="img-responsive" src="https://res.cloudinary.com/your-delicacy-bv/image/upload/Combo1"/>
-      <input type="checkbox" name="itemid" value="60000">
-      <i class="fa fa-check hidden"></i>
-    </label>
-    <li>
-    <ul><p style="padding: 0px;margin: 0px;">{{name}} - {{normalPrice}}{{#isEuro}}&euro;{{/isEuro}}{{^isEuro}}{{currencyCode}}{{/isEuro}}</p></ul>
-    <ul><p style="padding: 0px;margin: 0px;">{{#isVegetarian}}<img src="/repository/css/images/icon_vegetarian.png" style="width: auto;" class="vegicon">{{/isVegetarian}} {{itemType}} | {{deliveryOptionType}}</p></ul>
-    <ul></ul>
-    </li>
-</div>
-</div>  
-<br>
-      
-      {{/combos}}  
-      <a class="button" value="create" onclick="doSubmit()" style="background-color: #d3394c; position: fixed;  bottom: 0px;  right: 15%;">Make it today's combo</a></div><br>  <div class="border3">
-    </aside>
-</div>
-</div>
-<script src="/js/prepareCombo.js"></script>
+<script src="/repository/js/prepareCombo.js"></script>
 </body>
 </html>

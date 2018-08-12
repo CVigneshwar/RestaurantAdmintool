@@ -13,7 +13,7 @@
       <ul id="nav">
         <!-- <li><img src="/repository/css/images/Uboxitlogo.png"></li> -->        
         <li><a href="/repository/selectItem/showAllItems" class="current">Items</a></li>
-        <li><a href="/repository/combo/showAllItems">Combos</a></li>
+        <li><a href="/repository/combo/getAllCombos">Combos</a></li>
     </ul>
     </nav>
   </header>

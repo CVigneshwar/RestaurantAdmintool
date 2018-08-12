@@ -11,12 +11,12 @@ public interface ComboService {
 
 	public Combo create(Combo combo);
 
-	public void delete(int id);
+	public void delete(Long id);
 
 	public List<Combo> findAll();
 
 	public Combo update(Combo combo);
 
-	public Combo findById(int id);
+	public Combo findById(Long id);
 
 }

@@ -3,12 +3,17 @@ function doSubmit() {
     $("input:checkbox[name=itemid]:checked").each(function(){
     checkedValue.push($(this).val());
 });
-
-console.log(checkedValue);
-
-var formAction = "/repository/combo/prepareCombo?itemIds="+checkedValue.join();
+    console.log(checkedValue);
+var nextAction = document.getElementById("nextAction").value;
+if(nextAction.includes("showComboForm") && !nextAction.includes(",")){
+	alert("Select atleast 2 items to create combo");
+}
+else{
+var formAction = nextAction+checkedValue.join();
+document.getElementByName
 document.getElementById("itemlist").action=formAction;
 document.getElementById("itemlist").submit();
+}
 }
 
 $( document ).ready(function() {
